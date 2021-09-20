@@ -33,6 +33,7 @@ function User() {
   };
   const updateUser = (e) => {
     e.preventDefault();
+
     const data = {
       firstName: firstName,
       lastName: lastName,
@@ -145,7 +146,7 @@ function User() {
                 <Link
                   to="/users"
                   onClick={updateUser}
-                  className="btn btn-primary btn-md btn-block"
+                  className="btn btn-lg btn-block submit-btn"
                 >
                   Update
                 </Link>

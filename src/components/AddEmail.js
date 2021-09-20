@@ -38,7 +38,7 @@ function AddEmail() {
                 <Link
                   to="/addinfo"
                   onClick={saveEmail}
-                  className="btn btn-primary btn-md btn-block"
+                  className="btn btn-lg btn-block submit-btn"
                 >
                   Next
                 </Link>

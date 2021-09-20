@@ -5842,3 +5842,17 @@ button.viewmore-button {
   height: 20px;
   width: 20px;
 }
+.member-btn .submit-btn {
+  background-color: #03658c;
+  font-weight: 700;
+  font-size: 16px;
+  color: white;
+  height: 50px;
+}
+.member-btn > .submit-btn:hover {
+  background-color: white;
+  border: 1px solid #03658c;
+  font-weight: 700;
+  font-size: 16px;
+  color: black;
+}
