@@ -6,7 +6,7 @@ import editimg from "../images/edit.svg";
 import delimg from "../images/delete1.svg";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { addid } from "../features/userSlice";
+import { adduser } from "../features/userSlice";
 
 function AllUsers() {
   const history = useHistory();
@@ -28,9 +28,17 @@ function AllUsers() {
   };
   const editUser = (rowIndex) => {
     const id = usersRef.current[rowIndex].id;
+    const firstName = usersRef.current[rowIndex].firstName;
+    const lastName = usersRef.current[rowIndex].lastName;
+    const email = usersRef.current[rowIndex].email;
+    const password = usersRef.current[rowIndex].password;
     dispatch(
-      addid({
+      adduser({
         id: id,
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        password: password,
       })
     );
     history.push("/user");

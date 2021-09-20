@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import CrudDataService from "../services/crud.service";
 import { Link } from "react-router-dom";
 import helpcircle from "../images/help-circle.svg";
@@ -66,7 +66,7 @@ function User() {
                     type="email"
                     className="form-control "
                     id="email"
-                    value={email}
+                    value={!email ? reduxuser.email : email}
                     onChange={onChangeEmail}
                   />
                 </div>
@@ -78,7 +78,7 @@ function User() {
                         type="text"
                         className="form-control"
                         id="firstname"
-                        value={firstName}
+                        value={!firstName ? reduxuser.firstName : firstName}
                         onChange={onChangeFname}
                       />
                     </div>
@@ -90,7 +90,7 @@ function User() {
                         type="text"
                         className="form-control"
                         id="lastname"
-                        value={lastName}
+                        value={!lastName ? reduxuser.lastName : lastName}
                         onChange={onChangeLname}
                       />
                     </div>
@@ -118,7 +118,7 @@ function User() {
                       name="your_pass"
                       id="password-field"
                       className="form-control"
-                      value={password}
+                      value={!password ? reduxuser.password : password}
                       onChange={onChangePassword}
                     />
                     <span>
