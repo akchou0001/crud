@@ -7,6 +7,19 @@ import eyeOff from "../images/eye-off.svg";
 import { useHistory } from "react-router";
 import { selectUser } from "../features/userSlice";
 import { Link } from "react-router-dom";
+import ReactTooltip from "react-tooltip";
+import styled from "styled-components";
+const Container = styled.div`
+  text-align: center;
+`;
+const StyledReactTooltip = styled(ReactTooltip)`
+  background-color: white !important;
+  color: black !important;
+  box-shadow: 0px 2px 20px lightgray;
+  &:after {
+    border-top-color: white !important;
+  }
+`;
 function AddUser() {
   const history = useHistory();
   const user = useSelector(selectUser);
@@ -15,6 +28,7 @@ function AddUser() {
   const [lastName, setlastName] = useState("");
   const [password, setpassword] = useState("");
   const [passwordShown, setPasswordShown] = useState(false);
+  const [enabledThing, setEnabledThing] = useState(false);
   const togglePasswordVisiblity = () => {
     setPasswordShown(passwordShown ? false : true);
   };
@@ -101,17 +115,14 @@ function AddUser() {
                       <div className="form-intro-box d-flex align-items-center">
                         <label htmlFor="password">Password</label>
                         {/* Add Framer Motion */}
-                        <a
-                          href="#"
-                          tabIndex="0"
-                          className="help-popover ml-2"
-                          data-container="body"
-                          data-toggle="popover"
-                          data-placement="top"
-                          data-content="Lorem ipsum dolor sit amet, consectetur adipiscing"
-                        >
+                        <Container data-tip data-for="sadFace">
                           <img src={helpcircle} alt="" />
-                        </a>
+                        </Container>
+                        <StyledReactTooltip id="sadFace" effect="solid">
+                          <span>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                          </span>
+                        </StyledReactTooltip>
                       </div>
                       <div className="input-group">
                         <input
